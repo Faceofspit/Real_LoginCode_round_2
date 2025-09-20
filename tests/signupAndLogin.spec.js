@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test"
-import { signup } from "Pages/signup"
+import { signup } from "../pages/signup"
 
 
 test("Sign up to the Real", async({page})=>{
