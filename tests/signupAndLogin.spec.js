@@ -4,7 +4,7 @@ import { signup } from "Pages/signup"
 
 test("Sign up to the Real", async({page})=>{
 
-    const real = new signup(this.page);
+    const real = new signup(page);
 
    await  real.Navigate();
    await  real.joinReal();
@@ -13,7 +13,7 @@ test("Sign up to the Real", async({page})=>{
 
 test("Sign up to the Real Negative Testcase with wrong email", async({page})=>{
 
-    const real = new signup(this.page);
+    const real = new signup(page);
 
    await  real.Navigate();
    await  real.joinReal();
@@ -22,7 +22,7 @@ test("Sign up to the Real Negative Testcase with wrong email", async({page})=>{
 
 test("Sign up to the Real Negative Testcase with wrong password", async({page})=>{
 
-    const real = new signup(this.page);
+    const real = new signup(page);
 
    await  real.Navigate();
    await  real.joinReal();
@@ -33,7 +33,7 @@ test("Sign up to the Real Negative Testcase with wrong password", async({page})=
 
 test("Testcase 1 with all dollars", async ({ page }) => {
 
-const real = new signup(this.page);
+const real = new signup(page);
 
     await real.Login();
     await real.transactionEyeIcon();
@@ -43,7 +43,7 @@ const real = new signup(this.page);
 
 test("Testcase 2 with two dollars and two percentages", async ({ page }) => {
 
-const real = new signup(this.page);
+const real = new signup(page);
 
     await real.Login();
     await real.transactionEyeIcon();
@@ -53,7 +53,7 @@ const real = new signup(this.page);
 
 test("Testcase 3 with all 4 percentages", async ({ page }) => {
 
-const real = new signup(this.page);
+const real = new signup(page);
 
     await real.Login();
     await real.transactionEyeIcon();
