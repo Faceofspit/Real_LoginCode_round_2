@@ -69,7 +69,8 @@ export class signup {
         await this.lastName.fill('c');
         await this.userName.fill('Krishnac');
         await this.Email.fill('krishnachitragar0@gmail.com');
-        await this.country.selectOption("United States");
+        await this.country.click();
+        await this.page.locator("//div[normalize-space()='United States']").click();
         await this.password.fill('Krishna@123');
         await this.PConf.fill('Krishna@123');
         await this.checkbox1.click();
@@ -96,7 +97,8 @@ export class signup {
         await this.userName.fill('Krishnac');
         // entering wrong email
         await this.Email.fill('krishna');
-        await this.country.selectOption("United States");
+        await this.country.click();
+        await this.page.locator("//div[normalize-space()='United States']").click();
         await this.password.fill('Krishna@123');
         await this.PConf.fill('Krishna@123');
         await this.checkbox1.click();
@@ -122,7 +124,8 @@ export class signup {
         await this.lastName.fill('c');
         await this.userName.fill('Krishnac');
         await this.Email.fill('krishnachitragar0@gmail.com');
-        await this.country.selectOption("United States");
+        await this.country.click();
+        await this.page.locator("//div[normalize-space()='United States']").click();
         await this.password.fill('Krishna');
         await this.PConf.fill('Krishna@123');
         await this.checkbox1.click();
@@ -137,7 +140,7 @@ export class signup {
 
 
 
-// roundTwo
+    // roundTwo
 
 
     async Login() {
@@ -199,7 +202,7 @@ export class signup {
         await expect(this.total).toHaveCSS("border-color", "#e4e4e7");
     }
 
-     async deatilsAdjustTestcase3() {
+    async deatilsAdjustTestcase3() {
         await expect(this.detailsTab).toBeVisible();
         await this.detailsTab.click();
         await expect(this.adjustCommission).toBeVisible();
@@ -207,9 +210,9 @@ export class signup {
 
         await expect(this.totalCommission).toBeVisible();
 
-         await expect(this.toggle1).toBeVisible();
+        await expect(this.toggle1).toBeVisible();
         await expect(this.toggle2).toBeVisible();
-         await this.toggle1.click();
+        await this.toggle1.click();
         await this.toggle2.click();
 
         await this.input1.fill("50");
