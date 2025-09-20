@@ -8,7 +8,7 @@ export class signup {
         this.formVerificationText = page.locator("//p[text()='Please fill out the form below to get started.']");
         this.firstName = page.locator("//label[text()='First Name']//following::input[1]");
         this.lastName = page.locator("//label[text()='Last Name']//following::input[1]");
-        this.userName = page.locator("//label[text()='Username']//following::input[1]");
+        this.userName = page.locator("//label[text()='Email / Username']//following::input[1]");
         this.Email = page.locator("//span[text()='Email']//following::input[1]");
         this.country = page.locator("//label[text()='Country']//following::input[1]");
         this.password = page.locator("//label[text()='Password']//following::input[1]");
@@ -22,7 +22,7 @@ export class signup {
         this.loginButton = page.locator("//span[text()='Login']");
 
         // deatils tab
-        this.eyeIcon = page.locator("//button[@data-testid='icon-button']");
+        this.eyeIcon = page.locator("(//button[@data-testid='icon-button'])[1]");
         this.detailsTab = page.locator("//p[text()='Details']");
         this.adjustCommission = page.locator("//div[@data-testid='adjust-commission-splits']");
 
@@ -138,8 +138,6 @@ export class signup {
 
 
 
-
-
     // roundTwo
 
 
@@ -155,7 +153,7 @@ export class signup {
     }
 
     async transactionEyeIcon() {
-        await expect(this.eyeIcon).toBeVisible();
+        await expect(this.eyeIcon).toBeEnabled({ timeout: 10000 });
         await this.eyeIcon.click();
     }
 
