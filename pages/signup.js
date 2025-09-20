@@ -44,6 +44,98 @@ export class signup {
 
     }
 
+    async Navigate() {
+        await this.page.goto("https://bolt.playrealbrokerage.com/");
+        await expect(this.page).toHaveTitle("playrealbrokerage");
+    }
+    async joinReal() {
+        await expect(formVerificationText).toBeVisible();
+        await this.joinReal.click();
+
+        await expect(formVerificationText).toBeVisible();
+    }
+    async SignUp() {
+        await expect(this.firstName).toBeVisible()
+        await expect(this.lastName).toBeVisible()
+        await expect(this.userName).toBeVisible()
+        await expect(this.Email).toBeVisible()
+        await expect(this.country).toBeVisible()
+        await expect(this.password).toBeVisible()
+        await expect(this.PConf).toBeVisible()
+        await expect(this.checkbox1).toBeVisible()
+        await expect(this.checkbox2).toBeVisible()
+
+        await this.firstName.fill('krishna');
+        await this.lastName.fill('c');
+        await this.userName.fill('Krishnac');
+        await this.Email.fill('krishnachitragar0@gmail.com');
+        await this.country.selectOption("United States");
+        await this.password.fill('Krishna@123');
+        await this.PConf.fill('Krishna@123');
+        await this.checkbox1.click();
+        await this.checkbox2.click();
+
+        await expect(this.CreateButton).toBeVisible();
+        await this.CreateButton.click();
+
+    }
+
+    async SignUpEmailError() {
+        await expect(this.firstName).toBeVisible()
+        await expect(this.lastName).toBeVisible()
+        await expect(this.userName).toBeVisible()
+        await expect(this.Email).toBeVisible()
+        await expect(this.country).toBeVisible()
+        await expect(this.password).toBeVisible()
+        await expect(this.PConf).toBeVisible()
+        await expect(this.checkbox1).toBeVisible()
+        await expect(this.checkbox2).toBeVisible()
+
+        await this.firstName.fill('krishna');
+        await this.lastName.fill('c');
+        await this.userName.fill('Krishnac');
+        // entering wrong email
+        await this.Email.fill('krishna');
+        await this.country.selectOption("United States");
+        await this.password.fill('Krishna@123');
+        await this.PConf.fill('Krishna@123');
+        await this.checkbox1.click();
+        await this.checkbox2.click();
+
+        await expect(this.CreateButton).toBeVisible();
+        await this.CreateButton.click();
+
+    }
+
+    async signupWrongPassword() {
+        await expect(this.firstName).toBeVisible()
+        await expect(this.lastName).toBeVisible()
+        await expect(this.userName).toBeVisible()
+        await expect(this.Email).toBeVisible()
+        await expect(this.country).toBeVisible()
+        await expect(this.password).toBeVisible()
+        await expect(this.PConf).toBeVisible()
+        await expect(this.checkbox1).toBeVisible()
+        await expect(this.checkbox2).toBeVisible()
+
+        await this.firstName.fill('krishna');
+        await this.lastName.fill('c');
+        await this.userName.fill('Krishnac');
+        await this.Email.fill('krishnachitragar0@gmail.com');
+        await this.country.selectOption("United States");
+        await this.password.fill('Krishna');
+        await this.PConf.fill('Krishna@123');
+        await this.checkbox1.click();
+        await this.checkbox2.click();
+
+        await expect(this.CreateButton).toBeVisible();
+        await this.CreateButton.click();
+
+    }
+
+
+
+
 
 // roundTwo
 
