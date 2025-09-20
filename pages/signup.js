@@ -52,7 +52,7 @@ export class signup {
         await expect(formVerificationText).toBeVisible();
         await this.joinRealLink.click();
 
-        await expect(formVerificationText).toBeVisible();
+        await expect(this.formVerificationText).toBeVisible();
     }
     async SignUp() {
         await expect(this.firstName).toBeVisible()
