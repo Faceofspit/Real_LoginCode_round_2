@@ -4,7 +4,7 @@ export class signup {
     constructor(page) {
         this.page = page
 
-        this.joinReal = page.locator("//p[text()='Join Real']");
+        this.joinRealLink = page.locator("//p[text()='Join Real']");
         this.formVerificationText = page.locator("//p[text()='Please fill out the form below to get started.']");
         this.firstName = page.locator("//label[text()='First Name']//following::input[1]");
         this.lastName = page.locator("//label[text()='Last Name']//following::input[1]");
@@ -46,11 +46,11 @@ export class signup {
 
     async Navigate() {
         await this.page.goto("https://bolt.playrealbrokerage.com/");
-        await expect(this.page).toHaveTitle("playrealbrokerage");
+        await expect(this.page).toHaveTitle("Login - Bolt");
     }
     async joinReal() {
         await expect(formVerificationText).toBeVisible();
-        await this.joinReal.click();
+        await this.joinRealLink.click();
 
         await expect(formVerificationText).toBeVisible();
     }
