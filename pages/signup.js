@@ -49,7 +49,7 @@ export class signup {
         await expect(this.page).toHaveTitle("Login - Bolt");
     }
     async joinReal() {
-        await expect(formVerificationText).toBeVisible();
+        await expect(this.joinRealLink).toBeVisible();
         await this.joinRealLink.click();
 
         await expect(this.formVerificationText).toBeVisible();
